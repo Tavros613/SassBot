@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool face$/;sassRegex = /^\/sass master$/;sleepRegex = /^\/go to sleep$/;
+      botRegex = /^\/cool face$/;sassRegex = /^\/sass master$/;sleepRegex = /^\/go to sleep$/;helpRegex = /^\/command help$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -18,6 +18,11 @@ function respond() {
 }else if (request.text && sleepRegex.test(request.text)){
   this.res.writeHead(200);
   postMessage('http://1.bp.blogspot.com/-CCjCTfBx3cU/UYsRmIIO5UI/AAAAAAAABc0/hmg70idNAsM/s1600/WonkaWhatIsSleep.jpg');
+  this.res.end();
+}else if (request.text && helpRegex.test(request.text)){
+  this.res.writeHead(200);
+  postMessage("Currently Available Commands:");
+  postMessage("/cool face, /sass master, /command help");
   this.res.end();
   }else {
     console.log("don't care");
