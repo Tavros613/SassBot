@@ -6,6 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool face$/;sassRegex = /^\/sass master$/;sleepRegex = /^\/go to sleep$/;helpRegex = /^\/command help$/;
+      byeRegex=/^\bye felicia$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -21,8 +22,12 @@ function respond() {
   this.res.end();
 }else if (request.text && helpRegex.test(request.text)){
   this.res.writeHead(200);
-    postMessage("/cool face, /sass master, /command help");
+    postMessage("/cool face, /sass master, /command help, /bye felicia");
   postMessage("Currently Available Commands:");
+  this.res.end();
+}else if (request.text && byeRegex.test(request.text)){
+  this.res.writeHead(200);
+  postMessage('https://vine.co/v/eX2BgZTax17');
   this.res.end();
   }else {
     console.log("don't care");
