@@ -27,7 +27,7 @@ function respond() {
   this.res.end();
 }else if (request.text && byeRegex.test(request.text)){
   this.res.writeHead(200);
-  postMessage("https://vine.co/v/eX2BgZTax17");
+  postMessage('http://gph.is/1aPhSqy');
   this.res.end();
   }else {
     console.log("don't care");
