@@ -21,8 +21,8 @@ function respond() {
   this.res.end();
 }else if (request.text && helpRegex.test(request.text)){
   this.res.writeHead(200);
+    postMessage("/cool face, /sass master, /command help");
   postMessage("Currently Available Commands:");
-  postMessage("/cool face, /sass master, /command help");
   this.res.end();
   }else {
     console.log("don't care");
