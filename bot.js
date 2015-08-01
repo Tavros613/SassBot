@@ -22,8 +22,9 @@ function respond() {
   this.res.end();
 }else if (request.text && helpRegex.test(request.text)){
   this.res.writeHead(200);
+   postMessage("Currently Available Commands:");
     postMessage("/cool face, /sass master, /command help, /bye felicia");
-  postMessage("Currently Available Commands:");
+  
   this.res.end();
 }else if (request.text && byeRegex.test(request.text)){
   this.res.writeHead(200);
