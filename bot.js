@@ -4,9 +4,7 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool face$/;sassRegex = /^\/sass master$/;sleepRegex = /^\/go to sleep$/;helpRegex = /^\/command help$/;
-      byeRegex=/^\bye felicia$/;
+  var request = JSON.parse(this.req.chunks[0]);
 
   if(request.text == ".face") {
     this.res.writeHead(200);
@@ -20,10 +18,10 @@ function respond() {
   this.res.writeHead(200);
   postMessage('http://1.bp.blogspot.com/-CCjCTfBx3cU/UYsRmIIO5UI/AAAAAAAABc0/hmg70idNAsM/s1600/WonkaWhatIsSleep.jpg');
   this.res.end();
-}else if (request.text == ".help"){
+}else if (request.text == ".commands"){
   this.res.writeHead(200);
   postMessage("Currently Available Commands:");
-  postMessage(".face | .sleep | .help | .bye | .test");
+  postMessage(".face | .sleep | .help | .bye | .test | .commands");
   this.res.end();
 }else if (request.text == ".bye"){
   this.res.writeHead(200);
@@ -33,6 +31,11 @@ function respond() {
   this.res.writeHead(200);
   postMessage("Nah fam");
   this.res.end();
+}else if (request.text == ".help"){
+  this.res.writeHead(200);
+  postMessage('https://docs.google.com/document/d/1Uv2hNQ1BI8xESlJOp1NBJjwHb13ro1oIUwykRvG9uAs/edit?usp=sharing');
+  this.res.end();
+}
   }else {
     console.log("don't care");
     this.res.writeHead(200);
