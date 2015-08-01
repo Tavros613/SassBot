@@ -35,7 +35,6 @@ function respond() {
   this.res.writeHead(200);
   postMessage('https://docs.google.com/document/d/1Uv2hNQ1BI8xESlJOp1NBJjwHb13ro1oIUwykRvG9uAs/edit?usp=sharing');
   this.res.end();
-}
   }else {
     console.log("don't care");
     this.res.writeHead(200);
