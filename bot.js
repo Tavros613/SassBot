@@ -37,13 +37,20 @@ function respond() {
   postMessage('https://docs.google.com/document/d/1Uv2hNQ1BI8xESlJOp1NBJjwHb13ro1oIUwykRvG9uAs/edit?usp=sharing');
   postMessage("This is a great resource that should answer all of your questions!");
   this.res.end();
+}else if(request.text.charAt(0) == '.'){
+   this.res.writeHead(200);
+   var reqs  =  request.text.substr(0, 0) + str.substr(0 + 1);
+   postMessage(reverse(reqs));
+   this.res.end();
   }else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
 }
-
+function reverse(s) {
+  return s.split('').reverse().join('');
+}
 function postMessage(req) {
   var botResponse, options, body, botReq;
 
