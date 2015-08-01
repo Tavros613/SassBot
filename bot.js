@@ -12,15 +12,15 @@ function respond() {
     this.res.writeHead(200);
     postMessage(cool());
     this.res.end();
-  }else if (request.text && == ".sass"){
+  }else if (request.text  == ".sass"){
   this.res.writeHead(200);
   postMessage("You mean Matt?");
   this.res.end();
-}else if (request.text && ".sleep"){
+}else if (request.text == ".sleep"){
   this.res.writeHead(200);
   postMessage('http://1.bp.blogspot.com/-CCjCTfBx3cU/UYsRmIIO5UI/AAAAAAAABc0/hmg70idNAsM/s1600/WonkaWhatIsSleep.jpg');
   this.res.end();
-}else if (request.text && ".help"){
+}else if (request.text == ".help"){
   this.res.writeHead(200);
   postMessage("Currently Available Commands:");
   postMessage(".face | .sleep | .help | .bye | .test");
