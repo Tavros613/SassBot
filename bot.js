@@ -42,6 +42,11 @@ function respond() {
    var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
    postMessage(reverse(reqs));
    this.res.end();
+}else if(request.text.charAt(0) == "."){
+   this.res.writeHead(200);
+   var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
+   postMessage("Unknown Command: " + reqs);
+   this.res.end();
   }else {
     console.log("don't care");
     this.res.writeHead(200);
