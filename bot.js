@@ -21,7 +21,7 @@ function respond() {
 }else if (request.text == ".commands"){
   this.res.writeHead(200);
   postMessage("Currently Available Commands:");
-  postMessage(".face | .sleep | .help | .bye | .test | .commands");
+  postMessage(".face|.sleep|.help|.bye|.test|.commands");
   this.res.end();
 }else if (request.text == ".bye"){
   this.res.writeHead(200);
