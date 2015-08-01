@@ -42,7 +42,7 @@ function respond() {
    var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
    postMessage(reverse(reqs));
    this.res.end();
-}else if(request.text.charAt(0) == "."){
+}else if(request.text.charAt(0) == "." && request.text != ".face|.sleep|.help|.bye|.test|.commands"){
    this.res.writeHead(200);
    var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
    postMessage("Unknown Command: "  + reqs);
