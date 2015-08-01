@@ -45,7 +45,7 @@ function respond() {
 }else if(request.text.charAt(0) == "."){
    this.res.writeHead(200);
    var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
-   postMessage("Unknown Command: " + reqs);
+   postMessage("Unknown Command: " + """" reqs + """);
    this.res.end();
   }else {
     console.log("don't care");
