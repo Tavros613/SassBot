@@ -8,26 +8,26 @@ function respond() {
       botRegex = /^\/cool face$/;sassRegex = /^\/sass master$/;sleepRegex = /^\/go to sleep$/;helpRegex = /^\/command help$/;
       byeRegex=/^\bye felicia$/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text == ".face") {
     this.res.writeHead(200);
     postMessage(cool());
     this.res.end();
-  }else if (request.text && sassRegex.test(request.text)){
+  }else if (request.text && == ".sass"){
   this.res.writeHead(200);
-  postMessage("Sass Mattster!");
+  postMessage("You mean Matt?");
   this.res.end();
-}else if (request.text && sleepRegex.test(request.text)){
+}else if (request.text && ".sleep"){
   this.res.writeHead(200);
   postMessage('http://1.bp.blogspot.com/-CCjCTfBx3cU/UYsRmIIO5UI/AAAAAAAABc0/hmg70idNAsM/s1600/WonkaWhatIsSleep.jpg');
   this.res.end();
-}else if (request.text && helpRegex.test(request.text)){
+}else if (request.text && ".help"){
   this.res.writeHead(200);
   postMessage("Currently Available Commands:");
-  postMessage("/cool face, /sass master, /command help, /bye felicia");
+  postMessage(".face | .sleep | .help | .bye | .test");
   this.res.end();
-}else if (request.text && byeRegex.test(request.text)){
+}else if (request.text == ".bye"){
   this.res.writeHead(200);
-  postMessage('http://gph.is/1aPhSqy');
+  postMessage('https://media0.giphy.com/media/SZioIIBxB7QRy/200_s.gif');
   this.res.end();
 }else if (request.text == ".test"){
   this.res.writeHead(200);
