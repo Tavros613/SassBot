@@ -27,7 +27,7 @@ function respond() {
   this.res.end();
 }else if (request.text == ".bye"){
   this.res.writeHead(200);
-  postMessage('https://media0.giphy.com/media/SZioIIBxB7QRy/200_s.gif');
+  postMessage('http://media.giphy.com/media/l0O9xk5sLcmWmOkaQ/giphy.gif');
   this.res.end();
 }else if (request.text == ".test"){
   this.res.writeHead(200);
