@@ -7,7 +7,7 @@ function respond() {
    var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy$/;
 
-  if (request.text == ".help"){
+  if (request.text == "#help"){
   this.res.writeHead(200);
   postMessage('https://docs.google.com/document/d/1Uv2hNQ1BI8xESlJOp1NBJjwHb13ro1oIUwykRvG9uAs/edit?usp=sharing');
   postMessage("This is a great resource that should answer all of your questions!");
