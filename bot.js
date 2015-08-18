@@ -7,46 +7,12 @@ function respond() {
    var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy$/;
 
-  if(request.text == ".face") {
-    this.res.writeHead(200);
-    postMessage(cool());
-    this.res.end();
-  }else if (request.text  == ".sass"){
-  this.res.writeHead(200);
-  postMessage("You mean Matt?");
-  this.res.end();
-}else if (request.text == ".sleep"){
-  this.res.writeHead(200);
-  postMessage('http://1.bp.blogspot.com/-CCjCTfBx3cU/UYsRmIIO5UI/AAAAAAAABc0/hmg70idNAsM/s1600/WonkaWhatIsSleep.jpg');
-  this.res.end();
-}else if (request.text == ".commands"){
-  this.res.writeHead(200);
-  postMessage("Currently Available Commands:");
-  postMessage(".face|.sleep|.help|.bye|.test|.commands");
-  this.res.end();
-}else if (request.text == ".bye"){
-  this.res.writeHead(200);
-  postMessage('http://media.giphy.com/media/l0O9xk5sLcmWmOkaQ/giphy.gif');
-  this.res.end();
-}else if (request.text == ".test"){
-  this.res.writeHead(200);
-  postMessage("Nah fam");
-  this.res.end();
-}else if (request.text == ".help"){
+  if (request.text == ".help"){
   this.res.writeHead(200);
   postMessage('https://docs.google.com/document/d/1Uv2hNQ1BI8xESlJOp1NBJjwHb13ro1oIUwykRvG9uAs/edit?usp=sharing');
   postMessage("This is a great resource that should answer all of your questions!");
   this.res.end();
-}else if(request.text.charAt(0) == "^"){
-   this.res.writeHead(200);
-   var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
-   postMessage(reverse(reqs));
-   this.res.end();
-}else if(request.text.charAt(0) == "." && request.text != ".face|.sleep|.help|.bye|.test|.commands"){
-   this.res.writeHead(200);
-   var reqs  =  request.text.substr(0, 0) + request.text.substr(0 + 1);
-   postMessage("Unknown Command: "  + reqs);
-   this.res.end();
+}
   }else {
     console.log("don't care");
     this.res.writeHead(200);
